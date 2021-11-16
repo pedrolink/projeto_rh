@@ -89,6 +89,15 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0" method="GET">
+                    <?php
+                    if (isset($_GET['menu_principal'])) {
+                        if ($_GET['menu_principal'] == 'analise_vagas') {
+                    ?>
+                            <input type="hidden" name="menu_principal" value="analise_vagas">
+                    <?php
+                        }
+                    }
+                    ?>
                     <input class="form-control mr-sm-2" name="pesquisa" style="width: 300px;" type="text" placeholder="Qual vaga deseja encontrar?">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
@@ -107,24 +116,28 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                 include './form_cadastro_vagas.php';
             }
 
-            if ($_GET['menu_principal'] == 'listagem_usuarios'){
+            if ($_GET['menu_principal'] == 'listagem_usuarios') {
                 include './form_listagem_usuarios.php';
             }
 
-            if ($_GET['menu_principal'] == 'perfil_usuario'){
+            if ($_GET['menu_principal'] == 'perfil_usuario') {
                 include './form_perfil_usuario.php';
             }
 
-            if ($_GET['menu_principal'] == 'card_vaga'){
+            if ($_GET['menu_principal'] == 'card_vaga') {
                 include './form_card_vaga.php';
             }
 
-            if ($_GET['menu_principal'] == 'banco_talentos'){
+            if ($_GET['menu_principal'] == 'banco_talentos') {
                 include './form_banco_talentos.php';
             }
 
-            if ($_GET['menu_principal'] == 'analise_vagas'){
+            if ($_GET['menu_principal'] == 'analise_vagas') {
                 include './form_analise_vagas.php';
+            }
+
+            if ($_GET['menu_principal'] == 'especificacoes_vagas') {
+                include './form_especificacoes_vaga.php';
             }
         }
         ?>
@@ -142,7 +155,7 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>           
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 </body>
 
 </html>

@@ -39,7 +39,7 @@ $row_requisitos_vaga = mysqli_fetch_array($result_requisitos_vaga);
     if (isset($_SESSION['cadidato_vaga_cadastrado_error'])) :
     ?>
         <div class="notification is-warning">
-            <p>Perfil já cadastrado na vaga. Aguarde entrarmos em contato com você.</p>
+            <p>Perfil já cadastrado na vaga. Aguarde, logo entrarmos em contato com você.</p>
         </div>
     <?php
     endif;
