@@ -1,54 +1,55 @@
-<form>
+<form action="dados_atualiza_perfil_usuario.php" method="POST">
     <div style="width: 1200px; height: 880px;">
         <div class="card card-body bg-light">
             <h3 align="left">1. Informações Pessoais</h1>
                 <div class="form-row" style="margin-top: 5px">
                     <div class="form-group col-md-3">
                         <label>Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu e-mail">
+                        <input type="email" class="form-control" name="email" value="<?php echo $row_informacoes_usuario['email'] ?>" placeholder="Digite seu e-mail">
                     </div>
-                    <div class="form-group col-md-2">
+                    <!-- <div class="form-group col-md-2">
                         <label>Senha Atual</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a senha atual">
+                        <input type="password" class="form-control" name="senha_atual" placeholder="Digite a senha atual">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Senha Nova</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a senha nova">
-                    </div>
+                        <input type="password" class="form-control" name="senha_nova" placeholder="Digite a senha nova">
+                    </div> -->
                 </div>
                 <div class="vertical-line" style="border: 1px inset;  background-color: #75787a; margin-top: 10px"></div>
                 <div class="form-row" style="margin-top: 10px">
                     <div class="form-group col-md-4">
                         <label>Endereço</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite seu endereço principal">
+                        <input type="text" class="form-control" name="endereco_principal" value="<?php echo $row_competencia_usuario['endereco_principal'] ?>" placeholder="Digite seu endereço principal">
                     </div>
                     <div class="form-group col-md-4">
                         <label>Endereço 2</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite seu endereço secundário">
+                        <input type="text" class="form-control" name="endereco_secundario" value="<?php echo $row_competencia_usuario['endereco_secundario'] ?>" placeholder="Digite seu endereço secundário">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Cidade</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite sua cidade">
+                        <input type="text" class="form-control" name="cidade" value="<?php echo $row_competencia_usuario['cidade'] ?>" placeholder="Digite sua cidade">
                     </div>
                     <div class="form-group col-md-1">
                         <label>Estado</label>
-                        <select id="inputEstado" class="form-control">
-                            <option>...</option>
+                        <select name="estado" class="form-control">
+                            <option value="<?php echo $row_competencia_usuario['estado'] ?>"> <?php echo $row_competencia_usuario['estado'] ?> </option>
+                            <option value="RS">RS</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row" style="margin-top: 10px">
                     <div class="form-group col-md-2">
                         <label>Telefone</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite seu telefone">
+                        <input type="text" class="form-control" name="telefone_primario" value="<?php echo $row_competencia_usuario['telefone_primario'] ?>" placeholder="Digite seu telefone">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Telefone 2</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite seu telefone">
+                        <input type="text" class="form-control" name="telefone_secundario" value="<?php echo $row_competencia_usuario['telefone_secundario'] ?>" placeholder="Digite seu telefone">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Data de Nascimento</label>
-                        <input type="date" class="form-control" id="inputEmail4" placeholder="Digite sua cidade">
+                        <input type="date" class="form-control" name="data_nascimento" value="<?php echo $row_competencia_usuario['data_nascimento'] ?>">
                     </div>
                 </div>
         </div>
@@ -58,40 +59,39 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Pretenção Salarial</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite um valor">
+                        <input type="text" class="form-control" name="pretencao_salarial" value="<?php echo $row_competencia_usuario['pretencao_salarial'] ?>" placeholder="Digite um valor">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Nível</label>
-                        <select id="inputEstado" class="form-control">
-                            <option>...</option>
-                            <option>Estágio</option>
-                            <option>Júnior</option>
-                            <option>Pleno</option>
-                            <option>Sênior</option>
-                            <option>Gerente</option>
+                        <select name="nivel" class="form-control">
+                            <option value="<?php echo $row_competencia_usuario['nivel'] ?>"> <?php echo $row_competencia_usuario['nivel'] ?> </option>
+                            <option value="Estagiário">Estágio</option>
+                            <option value="Júnior">Júnior</option>
+                            <option value="Pleno">Pleno</option>
+                            <option value="Sênior">Sênior</option>
+                            <option value="Gerente">Gerente</option>
                         </select>
                     </div>
                 </div>
                 <div class="vertical-line" style="border: 1px inset;  background-color: #75787a; margin-top: 10px"></div>
                 <div class="form-group" style="margin-top: 10px">
                     <label for="inputAddress">Habilidades</label>
-                    <textarea name="" class="form-control" id="" cols="10" rows="5"></textarea>
-                    <!-- <input type="tex" class="form-control" id="inputAddress" placeholder="Rua dos Mega, nº 0"> -->
+                    <textarea name="habilidades" value="<?php echo $row_competencia_usuario['habilidades'] ?>" class="form-control" cols="10" rows="5" placeholder="Separar habilidades por ' ; '  Exemplo: PHP; JavaScript..."> <?php echo $row_competencia_usuario['habilidades'] ?> </textarea>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Nível Inglês</label>
-                        <select id="inputEstado" class="form-control">
-                            <option>Escolher...</option>
-                            <option>Básico</option>
-                            <option>Intermediário</option>
-                            <option>Avançado</option>
-                            <option>Fluente</option>
+                        <select name="nivel_ingles" class="form-control">
+                            <option value="<?php echo $row_competencia_usuario['nivel_ingles'] ?>"> <?php echo $row_competencia_usuario['nivel_ingles'] ?> </option>
+                            <option value="Básico">Básico</option>
+                            <option value="Intermediário">Intermediário</option>
+                            <option value="Avançado">Avançado</option>
+                            <option value="Fluente">Fluente</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputCEP">LinkedIn url</label>
-                        <input type="text" class="form-control" id="inputCEP">
+                        <input type="text" class="form-control" name="url_linkedin" value="<?php echo $row_competencia_usuario['url_linkedin'] ?>" placeholder="Informe sua URL do LinkedIn">
                     </div>
                 </div>
         </div>
