@@ -1,5 +1,30 @@
 <form action="dados_atualiza_perfil_usuario.php" method="POST">
     <div style="width: 1200px; height: 880px;">
+
+        <!-- PERFIL ALTERADO OU CADASTRADO COM SUCESSO -->
+        <?php
+        if (isset($_SESSION['competencia_usuario_success'])) :
+        ?>
+            <div class="notification is-success">
+                <p>Perfil alterado com sucesso!</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['competencia_usuario_success']);
+        ?>
+
+        <!-- ERRO AO ALTERAR OU CADASTRAR PERFIL -->
+        <?php
+        if (isset($_SESSION['competencia_usuario_error'])) :
+        ?>
+            <div class="notification is-danger">
+                <p>Erro ao cadastrar informações do perfil, favor tente novamente ou entre em contato com o administrador.</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['competencia_usuario_error']);
+        ?>
+
         <div class="card card-body bg-light">
             <h3 align="left">1. Informações Pessoais</h1>
                 <div class="form-row" style="margin-top: 5px">
@@ -7,14 +32,6 @@
                         <label>Email</label>
                         <input type="email" class="form-control" name="email" value="<?php echo $row_informacoes_usuario['email'] ?>" placeholder="Digite seu e-mail">
                     </div>
-                    <!-- <div class="form-group col-md-2">
-                        <label>Senha Atual</label>
-                        <input type="password" class="form-control" name="senha_atual" placeholder="Digite a senha atual">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label>Senha Nova</label>
-                        <input type="password" class="form-control" name="senha_nova" placeholder="Digite a senha nova">
-                    </div> -->
                 </div>
                 <div class="vertical-line" style="border: 1px inset;  background-color: #75787a; margin-top: 10px"></div>
                 <div class="form-row" style="margin-top: 10px">
@@ -59,7 +76,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Pretenção Salarial</label>
-                        <input type="text" class="form-control" name="pretencao_salarial" value="<?php echo $row_competencia_usuario['pretencao_salarial'] ?>" placeholder="Digite um valor">
+                        <input type="text" class="form-control" name="pretencao_salarial" value="<?php echo number_format($row_competencia_usuario['pretencao_salarial'], 2, ',', '.') ?>" placeholder="Digite um valor">
                     </div>
                     <div class="form-group col-md-2">
                         <label>Nível</label>

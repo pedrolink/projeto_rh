@@ -5,8 +5,6 @@ include './conexao.php';
 
 
 $email = trim($_POST['email']);
-// $senha_atual = trim($_POST['senha_atual']);
-// $senha_nova = trim($_POST['senha_nova']);
 
 $endereco_principal = trim($_POST['endereco_principal']);
 $endereco_secundario = trim($_POST['endereco_secundario']);
