@@ -25,8 +25,8 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
                         ?>
                             <div class="col-md-4" style="margin-top: 15px">
                                 <div class="card">
-                                    <?php if ($row_vagas['image']):  ?>
-                                        <img src="<?php echo $row_vagas['image'] ?>" class="card-img-top" alt="Imagem perfil 1" width="288px" height="288px">
+                                    <?php if ($row_vagas['imagem']):  ?>
+                                        <img src="<?php echo $row_vagas['imagem'] ?>" class="card-img-top" alt="Imagem perfil 1" width="288px" height="288px">
                                     <?php else: ?>
                                         <img src="images/jobs.png" class="card-img-top" alt="Imagem perfil 1" width="288px !important" height="288px !important">
                                     <?php endif ?>

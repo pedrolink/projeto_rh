@@ -26,7 +26,7 @@
             unset($_SESSION['erro_cadastro_vaga']);
             ?>
 
-            <form class="row g-3" action="dados_cadastro_vagas.php" method="POST">
+            <form class="row g-3" action="dados_cadastro_vagas.php" method="POST" enctype="multipart/form-data">
                 <div class="col-md-4">
                     <label class="form-label">Nome da vaga</label>
                     <input name="nome_vaga" class="form-control" id="nome_vaga">
@@ -62,15 +62,15 @@
                     <label class="form-label">Requisitos</label>
                     <input name="requisitos" class="form-control" id="requisitos" placeholder="Exemplo: PHP, JavaScript, Python, MySQL">
                 </div>
-                <div class="col-12" style="margin-top: 15px;">
+                <div class="col-12" style="margin-top: 20px;">
+                    <span class="help-block">Escolha uma imagem para vaga</span>
+                </div>
+                <!-- <div class="col-12" style="margin-top: 10px;">
+                    <input type="file" name="file" id="upload" required>
+                </div> -->
+                <div class="col-12" style="margin-top: 25px;">
                     <button type="submit" class="btn btn-success">Cadastrar</button>
                 </div>
             </form>
         </div>
 </div>
-
-
-
-<script>
-    $('.salario').mask('#.##0,00', {reverse: true});
-</script>

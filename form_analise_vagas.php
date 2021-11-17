@@ -32,7 +32,7 @@ if ($result_analise->num_rows > 0) { ?>
                 ?>
                     <tr>
                         <th scope="row"><?php echo $row_analise['id']?></th>
-                        <td><a type="button" class="btn btn-info" href="form_painel.php?menu_principal=especificacoes_vagas&id=<?php echo $row_analise['id'] ?>"> <?php echo $row_analise['nome']?> </a></td>
+                        <td><a href="form_painel.php?menu_principal=especificacoes_vagas&id=<?php echo $row_analise['id'] ?>"> <?php echo $row_analise['nome']?> </a></td>
                         <td><?php echo $row_analise['cargo']?></td>
                         <td><?php echo $row_analise['localidade']?></td>
                         <td><?php echo $row_analise['nivel']?></td>
