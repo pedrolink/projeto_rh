@@ -10,13 +10,14 @@ $nivel = trim($_POST['nivel']);
 $descricao_vaga = trim($_POST['descricao_vaga']);
 $requisitos = trim(strtoupper($_POST['requisitos']));
 $salario = trim(str_replace(',', '.', str_replace('.', '', $_POST['salario'])));
+$nivel_ingles = trim($_POST['nivel_ingles']);
 // $file_new_name = date('dmy') . time() . $_FILES['file']['name'];
 // $file_name = $_FILES['file']['name'];
 // $file_temp = $_FILES['file']['tmp_name'];
 // $file_size = $_FILES['file']['size'];
 // $location = 'images/';
 
-$insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, imagem) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$file_new_name')";
+$insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, nivel_ingles) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$nivel_ingles')";
 $result_insert_vaga = mysqli_query($conexao, $insert_vaga);
 
 if ($result_insert_vaga === TRUE) {

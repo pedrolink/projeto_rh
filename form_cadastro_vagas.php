@@ -27,7 +27,7 @@
             ?>
 
             <form class="row g-3" action="dados_cadastro_vagas.php" method="POST" enctype="multipart/form-data">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label class="form-label">Nome da vaga</label>
                     <input name="nome_vaga" class="form-control" id="nome_vaga">
                 </div>
@@ -39,9 +39,19 @@
                     <label class="form-label">Salário</label>
                     <input name="salario" class="form-control" id="salario">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label class="form-label">Localidade</label>
                     <input name="localidade" class="form-control" id="localidade">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Nível Inglês</label>
+                    <select name="nivel_ingles" class="form-control">
+                        <option>Selecione um nível</option>
+                        <option value="Básico">Básico</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Avançado">Avançado</option>
+                        <option value="Fluente">Fluente</option>
+                    </select>
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Nível</label>

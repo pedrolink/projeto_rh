@@ -19,6 +19,9 @@ while ($row_candidatos_vaga = $result_cadidatos_vaga->fetch_assoc()) {
     $pontos_usuario = 0;
 
     foreach ($lista_vagas as &$vaga) {
+
+        # COMPARA HABILIDADES DO USUÁRIO
+
         $sql_compara_requisito_usuario = 'SELECT * FROM competencias_usuario WHERE id_usuario = "' . $row_candidatos_vaga['id_usuario'] . '" AND habilidades LIKE "%' . trim($vaga) . '%"';
         $result_compara_requisito_usuario = $conexao->query($sql_compara_requisito_usuario);
 
@@ -26,6 +29,37 @@ while ($row_candidatos_vaga = $result_cadidatos_vaga->fetch_assoc()) {
             $pontos_usuario += 1;
         }
     }
+
+    # COMPARA INGLÊS DO USUÁRIO
+
+    $sql_requisito_ingles = 'SELECT * FROM competencias_usuario WHERE id_usuario = "' . $row_candidatos_vaga['id_usuario'] . '" AND nivel_ingles = "' . $row_vaga['nivel_ingles'] . '"';
+    $result_requisito_ingles = $conexao->query($sql_requisito_ingles);
+
+    if ($result_requisito_ingles->num_rows > 0) {
+        $pontos_usuario += 1;
+    }
+
+    # COMPARA SALÁRIO USUÁRIO
+
+    $espectativa_salario = $row_vaga['salario'] + 500;
+
+    $sql_requisito_salario = 'SELECT * FROM competencias_usuario WHERE id_usuario = "' . $row_candidatos_vaga['id_usuario'] . '" AND pretencao_salarial <= "' . $espectativa_salario . '"';
+    $result_requisito_salario = $conexao->query($sql_requisito_salario);
+
+    if ($result_requisito_salario->num_rows > 0) {
+        $pontos_usuario += 1;
+    }
+
+    # COMPARA NÍVEL
+
+    $sql_requisito_nivel = 'SELECT * FROM competencias_usuario WHERE id_usuario = "' . $row_candidatos_vaga['id_usuario'] . '" AND nivel = "' . $row_vaga['nivel'] . '"';
+    $result_requisito_nivel = $conexao->query($sql_requisito_nivel);
+
+    if ($result_requisito_nivel->num_rows > 0) {
+        $pontos_usuario += 1;
+    }
+
+    # ATUALIZA PONTOS
 
     $sql_update_pontos = 'UPDATE candidatos_vaga SET pontos = "' . $pontos_usuario . '" WHERE id_usuario = "' . $row_candidatos_vaga['id_usuario'] . '" AND id_vaga = "' . $id_vaga . '"';
 
@@ -35,6 +69,8 @@ while ($row_candidatos_vaga = $result_cadidatos_vaga->fetch_assoc()) {
         $_SESSION['pontos_error'] = true;
     }
 }
+
+# TRAZ MELHORES USUÁRIO SELECIONADOS PARA A VAGA
 
 $sql_melhor_candidato = 'SELECT * FROM candidatos_vaga WHERE id_vaga = ' . $id_vaga . ' AND pontos = (SELECT MAX(pontos) FROM candidatos_vaga)';
 $result_melhor_candidato = $conexao->query($sql_melhor_candidato);
