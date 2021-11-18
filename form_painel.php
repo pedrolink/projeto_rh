@@ -45,13 +45,12 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                             <?php echo $_SESSION['nome'] ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="form_painel.php?menu_principal=perfil_usuario">Perfil</a>
 
-                            <!-- CADASTRO DE VAGAS -->
+                            <!-- PERFIS NO SISTEMA -->
                             <?php
-                            if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador' or $row_informacoes_usuario['tipo_permissao'] == 'Time RH') :
+                            if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador') :
                             ?>
-                                <a class="dropdown-item" href="form_painel.php?menu_principal=cadastro_vagas">Cadastro de vagas</a>
+                                <a class="dropdown-item" href="form_painel.php?menu_principal=listagem_usuarios">Administrador</a>
                             <?php
                             endif;
                             ?>
@@ -65,8 +64,8 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                             endif;
                             ?>
 
-                            <!-- BANCO DE TALENTOS -->
-                            <?php
+                                                        <!-- BANCO DE TALENTOS -->
+                                                        <?php
                             if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador' or $row_informacoes_usuario['tipo_permissao'] == 'Time RH') :
                             ?>
                                 <a class="dropdown-item" href="form_painel.php?menu_principal=banco_talentos">Banco de talentos</a>
@@ -74,14 +73,17 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                             endif;
                             ?>
 
-                            <!-- PERFIS NO SISTEMA -->
+                            <!-- CADASTRO DE VAGAS -->
                             <?php
-                            if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador') :
+                            if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador' or $row_informacoes_usuario['tipo_permissao'] == 'Time RH') :
                             ?>
-                                <a class="dropdown-item" href="form_painel.php?menu_principal=listagem_usuarios">Administrador</a>
+                                <a class="dropdown-item" href="form_painel.php?menu_principal=cadastro_vagas">Cadastro de vagas</a>
                             <?php
                             endif;
                             ?>
+
+                            <a class="dropdown-item" href="form_painel.php?menu_principal=minhas_candidaturas">Minhas Candidaturas</a>
+                            <a class="dropdown-item" href="form_painel.php?menu_principal=perfil_usuario">Perfil</a>
 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="dados_logout.php">Sair</a>
@@ -138,6 +140,14 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
 
             if ($_GET['menu_principal'] == 'especificacoes_vagas') {
                 include './form_especificacoes_vaga.php';
+            }
+
+            if ($_GET['menu_principal'] == 'minhas_candidaturas') {
+                include './form_minhas_candidaturas.php';
+            }
+
+            if ($_GET['menu_principal'] == 'informacoes_usuario') {
+                include './form_informacoes_usuario.php';
             }
         }
         ?>
