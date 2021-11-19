@@ -17,7 +17,6 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
     }
 
     if ($result_vagas->num_rows > 0) { ?>
-        <form action="dados_exluir_vaga.php" method="POST" enctype="multipart/form-data">
             <div id="team-area">
                 <div class="container">
                     <div class="row">
@@ -47,7 +46,7 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
                                                 <a type="button" class="btn btn-primary" href="form_painel.php?menu_principal=card_vaga&id=<?php echo $row_vagas['id'] ?>">Acessar a vaga</a>
                                                 <a type="button" class="btn btn-warning" data-toggle="modal" data-target="#popup_edita_vaga_modal<?php echo $row_vagas['id'] ?>">Editar</a>
                                                 <input type="hidden" name="id_vaga_exluir" value="<?php echo $row_vagas['id'] ?>">
-                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                                <a type="button" class="btn btn-danger" href="dados_excluir_vaga.php?id_vaga_exluir=<?php echo $row_vagas['id'] ?>">Excluir</a>
                                             </li>
                                         <?php
                                         else :
@@ -67,7 +66,6 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
                     </div>
                 </div>
             </div>
-        </form>
     <?php
     } else { ?>
         <div class="card card-body bg-light" style="min-height: 640px;">
