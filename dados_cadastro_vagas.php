@@ -11,11 +11,10 @@ $descricao_vaga = trim($_POST['descricao_vaga']);
 $requisitos = trim(strtoupper($_POST['requisitos']));
 $salario = trim(str_replace(',', '.', str_replace('.', '', $_POST['salario'])));
 $nivel_ingles = trim($_POST['nivel_ingles']);
+
 $imagem_vaga = $_FILES['imagem_vaga'];
 $novo_nome_imagem = date("dmy") . time() . $imagem_vaga["name"];
 $file_temp = $imagem_vaga['tmp_name'];
-
-echo $imagem_vaga['name'];
 $location = 'images/vagas_images/';
 
 $insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, nivel_ingles, imagem) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$nivel_ingles', '$novo_nome_imagem')";
