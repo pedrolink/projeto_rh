@@ -30,8 +30,26 @@
                 <div class="form-row" style="margin-top: 5px">
                     <div class="form-group col-md-3">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo $row_informacoes_usuario['email'] ?>" placeholder="Digite seu e-mail">
+                        <input type="email" class="form-control" name="email" value="<?php echo $row_informacoes_usuario['email'] ?>" placeholder="Digite seu e-mail" required>
                     </div>
+                    <div class="form-group col-md-3" style="margin-left: 20px;">
+                        <label>Imagem Perfil</label>
+                        <input type="file" name="imagem_perfil" required>
+                    </div>
+                    <?php if ($row_competencia_usuario['imagem_usuario']) : ?>
+                        <div class="form-group col-md-3" style="margin-left: 270px; margin-top: -40px">
+                            <div class="circle" style="background-color: #aaa; border-radius: 50%; width: 150px; height: 150px; overflow: hidden; position: relative;">
+                                <input type="hidden" name="input_imagem_perfil" value="<?php $row_competencia_usuario['imagem_usuario'] ?>">
+                                <img src="images/profile_images/<?php echo $row_competencia_usuario['imagem_usuario'] ?>" style="position: absolute; bottom: 0; width: 100%;">
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <div class="form-group col-md-3" style="margin-left: 270px; margin-top: -40px">
+                            <div class="circle" style="background-color: #aaa; border-radius: 50%; width: 150px; height: 150px; overflow: hidden; position: relative;">
+                                <img src="images/user-icon.png" style="position: absolute; bottom: 0; width: 100%;">
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="vertical-line" style="border: 1px inset;  background-color: #75787a; margin-top: 10px"></div>
                 <div class="form-row" style="margin-top: 10px">
