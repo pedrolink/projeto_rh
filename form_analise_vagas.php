@@ -14,7 +14,7 @@ if (isset($_GET['pesquisa'])) {
 }
 
 if ($result_analise->num_rows > 0) { ?>
-    <div style="width: 1200px">
+    <div style="width: 1200px; margin-left: 170px">
         <table class="table table-striped">
             <thead>
                 <tr>

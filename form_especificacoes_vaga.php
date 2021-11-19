@@ -85,7 +85,7 @@ while ($row_melhor_candidato = $result_melhor_candidato->fetch_assoc()) {
 
 ?>
 
-    <div class="card" style="width: 24rem;">
+    <div class="card" style="width: 24rem; display: flex; justify-content: center;">
         <img class="card-img-top" src="images/foto_perfil.PNG">
         <div class="card-body">
             <h5 class="card-title"><?php echo $row_melhor_candidato_usuario['nome'] ?></h5>

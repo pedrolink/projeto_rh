@@ -1,5 +1,5 @@
 <form action="dados_atualiza_perfil_usuario.php" method="POST">
-    <div style="width: 1200px; height: 880px;">
+    <div style="width: 1200px; height: 880px; margin-left: 170px">
 
         <!-- PERFIL ALTERADO OU CADASTRADO COM SUCESSO -->
         <?php
