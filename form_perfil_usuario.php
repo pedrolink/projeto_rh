@@ -1,4 +1,4 @@
-<form action="dados_atualiza_perfil_usuario.php" method="POST">
+<form action="dados_atualiza_perfil_usuario.php" method="POST" enctype="multipart/form-data">
     <div style="width: 1200px; height: 880px; margin-left: 170px">
 
         <!-- PERFIL ALTERADO OU CADASTRADO COM SUCESSO -->
@@ -34,12 +34,12 @@
                     </div>
                     <div class="form-group col-md-3" style="margin-left: 20px;">
                         <label>Imagem Perfil</label>
-                        <input type="file" name="imagem_perfil" required>
+                        <input type="file" name="imagem_perfil">
                     </div>
+                    <input type="hidden" name="input_imagem_usuario" value="<?php echo $row_competencia_usuario['imagem_usuario'] ?>">
                     <?php if ($row_competencia_usuario['imagem_usuario']) : ?>
                         <div class="form-group col-md-3" style="margin-left: 270px; margin-top: -40px">
                             <div class="circle" style="background-color: #aaa; border-radius: 50%; width: 150px; height: 150px; overflow: hidden; position: relative;">
-                                <input type="hidden" name="input_imagem_perfil" value="<?php $row_competencia_usuario['imagem_usuario'] ?>">
                                 <img src="images/profile_images/<?php echo $row_competencia_usuario['imagem_usuario'] ?>" style="position: absolute; bottom: 0; width: 100%;">
                             </div>
                         </div>
