@@ -108,6 +108,55 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
     </div>
 
     <div style="margin-top: 15px">
+
+        <!-- VAGA ALTERADA COM SUCESSO -->
+        <?php
+        if (isset($_SESSION['status_update_vaga_success'])) :
+        ?>
+            <div class="notification is-success">
+                <p>Informações da vaga atualizadas com sucesso!</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_update_vaga_success']);
+        ?>
+
+        <!-- ERRO AO ATUALIZAR VAGA -->
+        <?php
+        if (isset($_SESSION['status_update_vaga_error'])) :
+        ?>
+            <div class="notification is-danger">
+                <p>Erro ao alterar informações da vaga, favor tente novamente ou entre em contato com o administrador.</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_update_vaga_error']);
+        ?>
+
+        <!-- VAGA EXCLUÍDA COM SUCESSO -->
+        <?php
+        if (isset($_SESSION['status_delete_vaga_success'])) :
+        ?>
+            <div class="notification is-success">
+                <p>Vaga deletada com sucesso!</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_delete_vaga_success']);
+        ?>
+
+        <!-- ERRO AO DELETAR VAGA -->
+        <?php
+        if (isset($_SESSION['status_delete_vaga_error'])) :
+        ?>
+            <div class="notification is-danger">
+                <p>Erro ao deletar a vaga, favor tente novamente ou entre em contato com o administrador.</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_delete_vaga_error']);
+        ?>
+
         <?php
         if (empty($_GET['menu_principal']) or $_GET['menu_principal'] == 'vagas') {
             include './form_vagas.php';

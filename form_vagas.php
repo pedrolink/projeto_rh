@@ -29,7 +29,7 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
                                     <?php if ($row_vagas['imagem']) :  ?>
                                         <img src="<?php echo $row_vagas['imagem'] ?>" class="card-img-top" alt="Imagem perfil 1" width="288px" height="288px">
                                     <?php else : ?>
-                                        <img src="images/jobs.png" class="card-img-top" alt="Imagem perfil 1" width="288px !important" height="288px !important">
+                                        <img src="images/vagas_images/jobs.png" class="card-img-top" alt="Imagem perfil 1" width="288px !important" height="288px !important">
                                     <?php endif ?>
                                     <div class="card-header">
                                         <h6><?php echo $row_vagas['nome'] ?></h6>

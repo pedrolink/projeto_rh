@@ -11,13 +11,14 @@ $descricao_vaga = trim($_POST['descricao_vaga']);
 $requisitos = trim(strtoupper($_POST['requisitos']));
 $salario = trim(str_replace(',', '.', str_replace('.', '', $_POST['salario'])));
 $nivel_ingles = trim($_POST['nivel_ingles']);
-// $file_new_name = date('dmy') . time() . $_FILES['file']['name'];
-// $file_name = $_FILES['file']['name'];
-// $file_temp = $_FILES['file']['tmp_name'];
-// $file_size = $_FILES['file']['size'];
-// $location = 'images/';
+$imagem_vaga = $_FILES['imagem_vaga'];
+$novo_nome_imagem = date("dmy") . time() . $imagem_vaga["name"];
+$file_temp = $imagem_vaga['tmp_name'];
 
-$insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, nivel_ingles) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$nivel_ingles')";
+echo $imagem_vaga['name'];
+$location = 'images/vagas_images/';
+
+$insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, nivel_ingles, imagem) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$nivel_ingles', '$novo_nome_imagem')";
 $result_insert_vaga = mysqli_query($conexao, $insert_vaga);
 
 if ($result_insert_vaga === TRUE) {
@@ -30,7 +31,7 @@ if ($result_insert_vaga === TRUE) {
     $insert_requisitos = "INSERT INTO requisitos_vagas (requisitos, id_vaga) VALUES ('$requisitos', '$id_vaga')";
 
     if ($conexao->query($insert_requisitos) === TRUE) {
-        // move_uploaded_file($file_temp, $location . $file_new_name);
+        move_uploaded_file($file_temp, $location . $novo_nome_imagem);
         $_SESSION['vaga_cadastrada'] = true;
     } else {
         $_SESSION['erro_cadastro_vaga'] = true;

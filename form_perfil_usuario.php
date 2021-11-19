@@ -76,11 +76,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Pretenção Salarial</label>
-                        <input type="text" class="form-control" name="pretencao_salarial" value="<?php echo number_format($row_competencia_usuario['pretencao_salarial'], 2, ',', '.') ?>" placeholder="Digite um valor">
+                        <input type="text" class="form-control" name="pretencao_salarial" value="<?php echo number_format($row_competencia_usuario['pretencao_salarial'], 2, ',', '.') ?>" placeholder="Digite um valor" required>
                     </div>
                     <div class="form-group col-md-2">
                         <label>Nível</label>
-                        <select name="nivel" class="form-control">
+                        <select name="nivel" class="form-control" required>
                             <option value="<?php echo $row_competencia_usuario['nivel'] ?>"> <?php echo $row_competencia_usuario['nivel'] ?> </option>
                             <option value="Estagiário">Estágio</option>
                             <option value="Júnior">Júnior</option>
@@ -93,12 +93,12 @@
                 <div class="vertical-line" style="border: 1px inset;  background-color: #75787a; margin-top: 10px"></div>
                 <div class="form-group" style="margin-top: 10px">
                     <label for="inputAddress">Habilidades</label>
-                    <textarea name="habilidades" value="<?php echo $row_competencia_usuario['habilidades'] ?>" class="form-control" cols="10" rows="5" placeholder="Separar habilidades por ' ; '  Exemplo: PHP; JavaScript..."> <?php echo $row_competencia_usuario['habilidades'] ?> </textarea>
+                    <textarea name="habilidades" value="<?php echo $row_competencia_usuario['habilidades'] ?>" class="form-control" cols="10" rows="5" placeholder="Separar habilidades por ' ; '  Exemplo: PHP; JavaScript..." required> <?php echo $row_competencia_usuario['habilidades'] ?> </textarea>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label>Nível Inglês</label>
-                        <select name="nivel_ingles" class="form-control">
+                        <select name="nivel_ingles" class="form-control" required>
                             <option value="<?php echo $row_competencia_usuario['nivel_ingles'] ?>"> <?php echo $row_competencia_usuario['nivel_ingles'] ?> </option>
                             <option value="Básico">Básico</option>
                             <option value="Intermediário">Intermediário</option>
