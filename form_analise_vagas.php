@@ -2,19 +2,44 @@
 if (isset($_GET['pesquisa'])) {
     $pesquisa = str_replace(',', '.', str_replace('.', '', $_GET['pesquisa']));
     if (is_numeric($pesquisa)) {
-        $sql_analise = 'SELECT * FROM vagas WHERE salario >= "' . $pesquisa . '"';
+        $sql_analise = 'SELECT * FROM vagas WHERE salario >= "' . $pesquisa . '" and ativa = "Sim"';
         $result_analise = $conexao->query($sql_analise);
     } else {
-        $sql_analise = 'SELECT * FROM vagas WHERE nome LIKE "%' . $pesquisa . '%" OR cargo LIKE "%' . $pesquisa . '%" OR localidade LIKE "%' . $pesquisa . '%"';
+        $sql_analise = 'SELECT * FROM vagas WHERE nome LIKE "%' . $pesquisa . '%" OR cargo LIKE "%' . $pesquisa . '%" OR localidade LIKE "%' . $pesquisa . '%" and ativa = "Sim"';
         $result_analise = $conexao->query($sql_analise);
     }
 } else {
-    $sql_analise = 'SELECT * FROM vagas ORDER BY id DESC';
+    $sql_analise = 'SELECT * FROM vagas WHERE ativa = "Sim" ORDER BY id DESC';
     $result_analise = $conexao->query($sql_analise);
 }
 
 if ($result_analise->num_rows > 0) { ?>
     <div style="width: 1200px; margin-left: 170px">
+
+        <!-- VAGA INATIVADA COM SUCESSO -->
+        <?php
+        if (isset($_SESSION['status_vaga_inativada_success'])) :
+        ?>
+            <div class="notification is-success">
+                <p>Vaga inativada com sucesso!</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_vaga_inativada_success']);
+        ?>
+
+        <!-- ERRO AO INVATIVAR A VAGA -->
+        <?php
+        if (isset($_SESSION['status_vaga_inativada_error'])) :
+        ?>
+            <div class="notification is-danger">
+                <p>Erro ao inativar a vaga, favor tente novamente ou entre em contato com o administrador.</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_vaga_inativada_error']);
+        ?>
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -51,6 +76,7 @@ if ($result_analise->num_rows > 0) { ?>
                             ?>
                         </td>
                         <td>R$ <?php echo number_format($row_analise['salario'], 2, ',', '.') ?></td>
+                        <td><a type="button" class="btn btn-danger" href="dados_fecha_vaga.php?id_vaga=<?php echo $row_analise['id'] ?>" style="margin-top: -5px;">Finalizar vaga</a></td>
                     </tr>
                 <?php
                 }
@@ -61,6 +87,31 @@ if ($result_analise->num_rows > 0) { ?>
 <?php
 } else { ?>
     <div class="card card-body bg-light" style="min-height: 640px;">
+
+        <!-- VAGA INATIVADA COM SUCESSO -->
+        <?php
+        if (isset($_SESSION['status_vaga_inativada_success'])) :
+        ?>
+            <div class="notification is-success">
+                <p>Vaga inativada com sucesso!</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_vaga_inativada_success']);
+        ?>
+
+        <!-- ERRO AO INVATIVAR A VAGA -->
+        <?php
+        if (isset($_SESSION['status_vaga_inativada_error'])) :
+        ?>
+            <div class="notification is-danger">
+                <p>Erro ao inativar a vaga, favor tente novamente ou entre em contato com o administrador.</p>
+            </div>
+        <?php
+        endif;
+        unset($_SESSION['status_vaga_inativada_error']);
+        ?>
+        
         <table class="table table-striped">
             <thead>
                 <tr>

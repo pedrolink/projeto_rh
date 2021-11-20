@@ -17,7 +17,7 @@ $novo_nome_imagem = date("dmy") . time() . $imagem_vaga["name"];
 $file_temp = $imagem_vaga['tmp_name'];
 $location = 'images/vagas_images/';
 
-$insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, nivel_ingles, imagem) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$nivel_ingles', '$novo_nome_imagem')";
+$insert_vaga = "INSERT INTO vagas (nome, cargo, descricao, localidade, nivel, salario, nivel_ingles, imagem, ativa) VALUES ('$nome_vaga', '$cargo', '$descricao_vaga', '$localidade', '$nivel', '$salario', '$nivel_ingles', '$novo_nome_imagem', 'Sim')";
 $result_insert_vaga = mysqli_query($conexao, $insert_vaga);
 
 if ($result_insert_vaga === TRUE) {

@@ -5,14 +5,14 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
     if (isset($_GET['pesquisa'])) {
         $pesquisa = str_replace(',', '.', str_replace('.', '', $_GET['pesquisa']));
         if (is_numeric($pesquisa)) {
-            $sql_vagas = 'SELECT * FROM vagas WHERE salario >= "' . $pesquisa . '"';
+            $sql_vagas = 'SELECT * FROM vagas WHERE salario >= "' . $pesquisa . '" and ativa = "Sim"';
             $result_vagas = $conexao->query($sql_vagas);
         } else {
-            $sql_vagas = 'SELECT * FROM vagas WHERE nome LIKE "%' . $pesquisa . '%" OR cargo LIKE "%' . $pesquisa . '%" OR localidade LIKE "%' . $pesquisa . '%"';
+            $sql_vagas = 'SELECT * FROM vagas WHERE nome LIKE "%' . $pesquisa . '%" OR cargo LIKE "%' . $pesquisa . '%" OR localidade LIKE "%' . $pesquisa . '%" and ativa = "Sim"';
             $result_vagas = $conexao->query($sql_vagas);
         }
     } else {
-        $sql_vagas = 'SELECT * FROM vagas ORDER BY id DESC';
+        $sql_vagas = 'SELECT * FROM vagas WHERE ativa = "Sim" ORDER BY id DESC';
         $result_vagas = $conexao->query($sql_vagas);
     }
 

@@ -49,9 +49,6 @@ session_start();
                             <div>
                                 <a style="margin-top: 5px" class="button is-block is-success is-large is-fullwidth" href="form_cadastro.php">Cadastrar</a>
                             </div>
-                            <div style="margin-top: 10px">
-                                <a href="form_atualizar_senha.php">Esqueceu sua senha?</a>
-                            </div>
                         </form>
                     </div>
                 </div>
