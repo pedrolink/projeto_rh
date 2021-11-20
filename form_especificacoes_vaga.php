@@ -76,11 +76,69 @@ $sql_melhor_candidato = 'SELECT * FROM candidatos_vaga WHERE id_vaga = ' . $id_v
 $result_melhor_candidato = $conexao->query($sql_melhor_candidato);
 
 if ($result_melhor_candidato->num_rows > 0) { ?>
+    <!-- CANDIDATO SELECIONADO COM SUCESSO -->
+    <?php
+    if (isset($_SESSION['selecionado_succes'])) :
+    ?>
+        <div class="notification is-success">
+            <p>Candidato selecionado para a vaga com sucesso!</p>
+        </div>
+    <?php
+    endif;
+    unset($_SESSION['selecionado_succes']);
+    ?>
+
+    <!-- ERRO AO SELECIONAR CANDIDATO -->
+    <?php
+    if (isset($_SESSION['selecionado_error'])) :
+    ?>
+        <div class="notification is-danger">
+            <p>Erro ao selecionar usuário para a vaga, favor tente novamente ou entre em contato com o administrador.</p>
+        </div>
+    <?php
+    endif;
+    unset($_SESSION['selecionado_error']);
+    ?>
+
+    <!-- BANCO DE TALENTOS SELECIONADO COM SUCESSO -->
+    <?php
+    if (isset($_SESSION['banco_talentos_success'])) :
+    ?>
+        <div class="notification is-success">
+            <p>Candidato selecionado para o banco de talentos com sucesso!</p>
+        </div>
+    <?php
+    endif;
+    unset($_SESSION['banco_talentos_success']);
+    ?>
+
+    <!-- ERRO AO SELECIONAR BANCO DE TALENTOS -->
+    <?php
+    if (isset($_SESSION['banco_talentos_error'])) :
+    ?>
+        <div class="notification is-danger">
+            <p>Erro ao selecionar candidato para banco de talentos, favor tente novamente ou entre em contato com o administrador.</p>
+        </div>
+    <?php
+    endif;
+    unset($_SESSION['banco_talentos_error']);
+    ?>
+
+    <!-- CANDIDATO JÁ SELECIONADO -->
+    <?php
+    if (isset($_SESSION['selecionado_exist'])) :
+    ?>
+        <div class="notification is-warning">
+            <p>Candidato já foi selecionado para esta opção...</p>
+        </div>
+    <?php
+    endif;
+    unset($_SESSION['selecionado_exist']);
+    ?>
 
     <div id="team-area">
         <div class="container">
             <div class="row">
-
                 <?php while ($row_melhor_candidato = $result_melhor_candidato->fetch_assoc()) {
                     $sql_melhor_candidato_usuario = 'SELECT * FROM usuarios WHERE id = "' . $row_melhor_candidato['id'] . '"';
                     $result_melhor_candidato_usuario = mysqli_query($conexao, $sql_melhor_candidato_usuario);
