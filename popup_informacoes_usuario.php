@@ -69,7 +69,7 @@ $row_popup_competencias_usuario = mysqli_fetch_array($result_popup_competencias_
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label>Descrição Usuário</label>
-                            <textarea class="form-control" name="descricao_usuario" cols="10" rows="2"></textarea>
+                            <textarea class="form-control" name="descricao_usuario" cols="10" rows="2" required></textarea>
                         </div>
                     </div>
                 </div>
