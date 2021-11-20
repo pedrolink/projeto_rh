@@ -31,12 +31,26 @@ if ($result_analise->num_rows > 0) { ?>
                 while ($row_analise = $result_analise->fetch_assoc()) {
                 ?>
                     <tr>
-                        <th scope="row"><?php echo $row_analise['id']?></th>
-                        <td><a href="form_painel.php?menu_principal=especificacoes_vagas&id=<?php echo $row_analise['id'] ?>"> <?php echo $row_analise['nome']?> </a></td>
-                        <td><?php echo $row_analise['cargo']?></td>
-                        <td><?php echo $row_analise['localidade']?></td>
-                        <td><?php echo $row_analise['nivel']?></td>
-                        <td>R$ <?php echo number_format($row_analise['salario'], 2, ',', '.')?></td>
+                        <th scope="row"><?php echo $row_analise['id'] ?></th>
+                        <td><a href="form_painel.php?menu_principal=especificacoes_vagas&id=<?php echo $row_analise['id'] ?>"> <?php echo $row_analise['nome'] ?> </a></td>
+                        <td><?php echo $row_analise['cargo'] ?></td>
+                        <td><?php echo $row_analise['localidade'] ?></td>
+                        <td>
+                            <?php
+                            if ($row_analise['nivel'] == 0) {
+                                echo 'Estagiário';
+                            } elseif ($row_analise['nivel'] == 1) {
+                                echo 'Júnior';
+                            } elseif ($row_analise['nivel'] == 2) {
+                                echo 'Pleno';
+                            } elseif ($row_analise['nivel'] == 3) {
+                                echo 'Sênior';
+                            } elseif ($row_analise['nivel'] == 4) {
+                                echo 'Gerente';
+                            }
+                            ?>
+                        </td>
+                        <td>R$ <?php echo number_format($row_analise['salario'], 2, ',', '.') ?></td>
                     </tr>
                 <?php
                 }
@@ -45,6 +59,21 @@ if ($result_analise->num_rows > 0) { ?>
         </table>
     </div>
 <?php
-} else {
-}
-?>
+} else { ?>
+    <div class="card card-body bg-light" style="min-height: 640px;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h5>Nenhuma vaga cadastrada até o momento...</h5>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<?php } ?>

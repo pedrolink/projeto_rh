@@ -47,21 +47,21 @@
                     <label class="form-label">Nível Inglês</label>
                     <select name="nivel_ingles" class="form-control" required>
                         <option>Selecione um nível</option>
-                        <option value="Básico">Básico</option>
-                        <option value="Intermediário">Intermediário</option>
-                        <option value="Avançado">Avançado</option>
-                        <option value="Fluente">Fluente</option>
+                        <option value="0">Básico</option>
+                        <option value="1">Intermediário</option>
+                        <option value="2">Avançado</option>
+                        <option value="3">Fluente</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Nível</label>
                     <select name="nivel" class="form-control" required>
                         <option>Selecione um nível</option>
-                        <option value="Estagiário">Estágio</option>
-                        <option value="Júnior">Júnior</option>
-                        <option value="Pleno">Pleno</option>
-                        <option value="Sênior">Sênior</option>
-                        <option value="Gerente">Gerente</option>
+                        <option value="0">Estágio</option>
+                        <option value="1">Júnior</option>
+                        <option value="2">Pleno</option>
+                        <option value="3">Sênior</option>
+                        <option value="4">Gerente</option>
                     </select>
                 </div>
                 <div class="col-12" style="margin-top: 10px;">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-12" style="margin-top: 10px;">
                     <label class="form-label">Requisitos</label>
-                    <input name="requisitos" class="form-control" id="requisitos" placeholder="Exemplo: PHP, JavaScript, Python, MySQL" required>
+                    <input name="requisitos" class="form-control" id="requisitos" placeholder="Colocar separado por ' ; ' Exemplo: PHP;JavaScript;Python" required>
                 </div>
                 <div class="col-12" style="margin-top: 20px;">
                     <span class="help-block">Escolha uma imagem para vaga</span>

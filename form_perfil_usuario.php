@@ -99,12 +99,26 @@
                     <div class="form-group col-md-2">
                         <label>Nível</label>
                         <select name="nivel" class="form-control" required>
-                            <option value="<?php echo $row_competencia_usuario['nivel'] ?>"> <?php echo $row_competencia_usuario['nivel'] ?> </option>
-                            <option value="Estagiário">Estágio</option>
-                            <option value="Júnior">Júnior</option>
-                            <option value="Pleno">Pleno</option>
-                            <option value="Sênior">Sênior</option>
-                            <option value="Gerente">Gerente</option>
+                            <option value="<?php echo $row_competencia_usuario['nivel'] ?>">
+                                <?php
+                                if ($row_competencia_usuario['nivel'] == 0) {
+                                    echo 'Estagiário';
+                                } elseif ($row_competencia_usuario['nivel'] == 1) {
+                                    echo 'Júnior';
+                                } elseif ($row_competencia_usuario['nivel'] == 2) {
+                                    echo 'Pleno';
+                                } elseif ($row_competencia_usuario['nivel'] == 3) {
+                                    echo 'Sênior';
+                                } elseif ($row_competencia_usuario['nivel'] == 4) {
+                                    echo 'Gerente';
+                                }
+                                ?>
+                            </option>
+                            <option value="0">Estágio</option>
+                            <option value="1">Júnior</option>
+                            <option value="2">Pleno</option>
+                            <option value="3">Sênior</option>
+                            <option value="4">Gerente</option>
                         </select>
                     </div>
                 </div>
@@ -117,11 +131,23 @@
                     <div class="form-group col-md-2">
                         <label>Nível Inglês</label>
                         <select name="nivel_ingles" class="form-control" required>
-                            <option value="<?php echo $row_competencia_usuario['nivel_ingles'] ?>"> <?php echo $row_competencia_usuario['nivel_ingles'] ?> </option>
-                            <option value="Básico">Básico</option>
-                            <option value="Intermediário">Intermediário</option>
-                            <option value="Avançado">Avançado</option>
-                            <option value="Fluente">Fluente</option>
+                            <option value="<?php echo $row_competencia_usuario['nivel_ingles'] ?>">
+                                <?php
+                                if ($row_competencia_usuario['nivel_ingles'] == 0) {
+                                    echo 'Básico';
+                                } elseif ($row_competencia_usuario['nivel_ingles'] == 1) {
+                                    echo 'Intermediário';
+                                } elseif ($row_competencia_usuario['nivel_ingles'] == 2) {
+                                    echo 'Avançado';
+                                } elseif ($row_competencia_usuario['nivel_ingles'] == 3) {
+                                    echo 'Fluente';
+                                }
+                                ?>
+                            </option>
+                            <option value="0">Básico</option>
+                            <option value="1">Intermediário</option>
+                            <option value="2">Avançado</option>
+                            <option value="3">Fluente</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
