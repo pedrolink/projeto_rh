@@ -69,7 +69,9 @@
                         <label>Estado</label>
                         <select name="estado" class="form-control">
                             <option value="<?php echo $row_competencia_usuario['estado'] ?>"> <?php echo $row_competencia_usuario['estado'] ?> </option>
-                            <option value="RS">RS</option>
+                            <?php 
+                                include './utilizaveis/estados.php';
+                            ?>
                         </select>
                     </div>
                 </div>

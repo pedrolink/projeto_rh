@@ -64,15 +64,6 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                             endif;
                             ?>
 
-                            <!-- BANCO DE TALENTOS -->
-                            <?php
-                            if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador' or $row_informacoes_usuario['tipo_permissao'] == 'Time RH') :
-                            ?>
-                                <a class="dropdown-item" href="form_painel.php?menu_principal=banco_talentos">Banco de talentos</a>
-                            <?php
-                            endif;
-                            ?>
-
                             <!-- CADASTRO DE VAGAS -->
                             <?php
                             if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador' or $row_informacoes_usuario['tipo_permissao'] == 'Time RH') :
@@ -83,6 +74,16 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                             ?>
 
                             <a class="dropdown-item" href="form_painel.php?menu_principal=minhas_candidaturas">Minhas Candidaturas</a>
+
+                            <!-- PAINEL GERENCIADOR -->
+                            <?php
+                            if ($row_informacoes_usuario['tipo_permissao'] == 'Administrador' or $row_informacoes_usuario['tipo_permissao'] == 'Time RH') :
+                            ?>
+                                <a class="dropdown-item" href="form_painel.php?menu_principal=painel_gerenciador">Painel Gerenciador</a>
+                            <?php
+                            endif;
+                            ?>
+
                             <a class="dropdown-item" href="form_painel.php?menu_principal=perfil_usuario">Perfil</a>
 
                             <div class="dropdown-divider"></div>
@@ -179,8 +180,8 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
                 include './form_card_vaga.php';
             }
 
-            if ($_GET['menu_principal'] == 'banco_talentos') {
-                include './form_banco_talentos.php';
+            if ($_GET['menu_principal'] == 'painel_gerenciador') {
+                include './form_painel_gerenciador.php';
             }
 
             if ($_GET['menu_principal'] == 'analise_vagas') {
@@ -197,6 +198,10 @@ $row_competencia_usuario = mysqli_fetch_array($result_competencia_usuario);
 
             if ($_GET['menu_principal'] == 'informacoes_usuario') {
                 include './form_informacoes_usuario.php';
+            }
+
+            if ($_GET['menu_principal'] == 'tabelas_candidatos') {
+                include './form_tabelas_candidatos.php';
             }
         }
         ?>

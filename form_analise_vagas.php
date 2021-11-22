@@ -111,7 +111,7 @@ if ($result_analise->num_rows > 0) { ?>
         endif;
         unset($_SESSION['status_vaga_inativada_error']);
         ?>
-        
+
         <table class="table table-striped">
             <thead>
                 <tr>
