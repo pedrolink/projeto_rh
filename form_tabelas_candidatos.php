@@ -64,15 +64,15 @@
                     <td><?php echo 'R$ ' . number_format($row_pesquisa_candidatos_competencias['pretencao_salarial'], 2, ',', '.') ?></td>
                     <td>
                         <?php
-                        if ($row_pesquisa_candidatos_competencias['nivel'] == 0) {
+                        if ($row_pesquisa_candidatos_competencias['nivel'] == 1) {
                             echo 'Estágio';
-                        } elseif ($row_pesquisa_candidatos_competencias['nivel'] == 1) {
-                            echo 'Júnior';
                         } elseif ($row_pesquisa_candidatos_competencias['nivel'] == 2) {
-                            echo 'Pleno';
+                            echo 'Júnior';
                         } elseif ($row_pesquisa_candidatos_competencias['nivel'] == 3) {
-                            echo 'Sênior';
+                            echo 'Pleno';
                         } elseif ($row_pesquisa_candidatos_competencias['nivel'] == 4) {
+                            echo 'Sênior';
+                        } elseif ($row_pesquisa_candidatos_competencias['nivel'] == 5) {
                             echo 'Gerente';
                         } 
                         ?>

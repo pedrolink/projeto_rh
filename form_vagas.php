@@ -39,15 +39,15 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
                                     <li class="list-group-item"><b>Localidade:</b> <?php echo $row_vagas['localidade'] ?></li>
                                     <li class="list-group-item"><b>Nível:</b>
                                         <?php
-                                        if ($row_vagas['nivel'] == 0) {
+                                        if ($row_vagas['nivel'] == 1) {
                                             echo 'Estagiário';
-                                        } elseif ($row_vagas['nivel'] == 1) {
-                                            echo 'Júnior';
                                         } elseif ($row_vagas['nivel'] == 2) {
-                                            echo 'Pleno';
+                                            echo 'Júnior';
                                         } elseif ($row_vagas['nivel'] == 3) {
-                                            echo 'Sênior';
+                                            echo 'Pleno';
                                         } elseif ($row_vagas['nivel'] == 4) {
+                                            echo 'Sênior';
+                                        } elseif ($row_vagas['nivel'] == 5) {
                                             echo 'Gerente';
                                         }
                                         ?>

@@ -44,13 +44,13 @@ $row_popup_requisitos_vaga = mysqli_fetch_array($result_popup_requisitos_vaga);
                             <select name="nivel_ingles" class="form-control">
                                 <option value="<?php echo $row_vagas['nivel_ingles'] ?>">
                                     <?php
-                                    if ($row_vagas['nivel_ingles'] == 0) {
+                                    if ($row_vagas['nivel_ingles'] == 1) {
                                         echo 'Básico';
-                                    } elseif ($row_vagas['nivel_ingles'] == 1) {
-                                        echo 'Intermediário';
                                     } elseif ($row_vagas['nivel_ingles'] == 2) {
-                                        echo 'Avançado';
+                                        echo 'Intermediário';
                                     } elseif ($row_vagas['nivel_ingles'] == 3) {
+                                        echo 'Avançado';
+                                    } elseif ($row_vagas['nivel_ingles'] == 4) {
                                         echo 'Fluente';
                                     }
                                     ?>
@@ -66,15 +66,15 @@ $row_popup_requisitos_vaga = mysqli_fetch_array($result_popup_requisitos_vaga);
                             <select name="nivel" class="form-control">
                                 <option value="<?php echo $row_vagas['nivel'] ?>">
                                     <?php
-                                    if ($row_vagas['nivel'] == 0) {
+                                    if ($row_vagas['nivel'] == 1) {
                                         echo 'Estagiário';
-                                    } elseif ($row_vagas['nivel'] == 1) {
-                                        echo 'Júnior';
                                     } elseif ($row_vagas['nivel'] == 2) {
-                                        echo 'Pleno';
+                                        echo 'Júnior';
                                     } elseif ($row_vagas['nivel'] == 3) {
-                                        echo 'Sênior';
+                                        echo 'Pleno';
                                     } elseif ($row_vagas['nivel'] == 4) {
+                                        echo 'Sênior';
+                                    } elseif ($row_vagas['nivel'] == 5) {
                                         echo 'Gerente';
                                     }
                                     ?>

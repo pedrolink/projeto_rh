@@ -47,21 +47,21 @@
                     <label class="form-label">Nível Inglês</label>
                     <select name="nivel_ingles" class="form-control" required>
                         <option>Selecione um nível</option>
-                        <option value="0">Básico</option>
-                        <option value="1">Intermediário</option>
-                        <option value="2">Avançado</option>
-                        <option value="3">Fluente</option>
+                        <option value="1">Básico</option>
+                        <option value="2">Intermediário</option>
+                        <option value="3">Avançado</option>
+                        <option value="4">Fluente</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Nível</label>
                     <select name="nivel" class="form-control" required>
                         <option>Selecione um nível</option>
-                        <option value="0">Estágio</option>
-                        <option value="1">Júnior</option>
-                        <option value="2">Pleno</option>
-                        <option value="3">Sênior</option>
-                        <option value="4">Gerente</option>
+                        <option value="1">Estágio</option>
+                        <option value="2">Júnior</option>
+                        <option value="3">Pleno</option>
+                        <option value="4">Sênior</option>
+                        <option value="5">Gerente</option>
                     </select>
                 </div>
                 <div class="col-12" style="margin-top: 10px;">

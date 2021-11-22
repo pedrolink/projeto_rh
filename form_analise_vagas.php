@@ -62,15 +62,15 @@ if ($result_analise->num_rows > 0) { ?>
                         <td><?php echo $row_analise['localidade'] ?></td>
                         <td>
                             <?php
-                            if ($row_analise['nivel'] == 0) {
+                            if ($row_analise['nivel'] == 1) {
                                 echo 'Estagiário';
-                            } elseif ($row_analise['nivel'] == 1) {
-                                echo 'Júnior';
                             } elseif ($row_analise['nivel'] == 2) {
-                                echo 'Pleno';
+                                echo 'Júnior';
                             } elseif ($row_analise['nivel'] == 3) {
-                                echo 'Sênior';
+                                echo 'Pleno';
                             } elseif ($row_analise['nivel'] == 4) {
+                                echo 'Sênior';
+                            } elseif ($row_analise['nivel'] == 5) {
                                 echo 'Gerente';
                             }
                             ?>

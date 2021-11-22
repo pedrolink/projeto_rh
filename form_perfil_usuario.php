@@ -103,15 +103,15 @@
                         <select name="nivel" class="form-control" required>
                             <option value="<?php echo $row_competencia_usuario['nivel'] ?>">
                                 <?php
-                                if ($row_competencia_usuario['nivel'] == 0) {
+                                if ($row_competencia_usuario['nivel'] == 1) {
                                     echo 'Estagiário';
-                                } elseif ($row_competencia_usuario['nivel'] == 1) {
-                                    echo 'Júnior';
                                 } elseif ($row_competencia_usuario['nivel'] == 2) {
-                                    echo 'Pleno';
+                                    echo 'Júnior';
                                 } elseif ($row_competencia_usuario['nivel'] == 3) {
-                                    echo 'Sênior';
+                                    echo 'Pleno';
                                 } elseif ($row_competencia_usuario['nivel'] == 4) {
+                                    echo 'Sênior';
+                                } elseif ($row_competencia_usuario['nivel'] == 5) {
                                     echo 'Gerente';
                                 }
                                 ?>
@@ -135,13 +135,13 @@
                         <select name="nivel_ingles" class="form-control" required>
                             <option value="<?php echo $row_competencia_usuario['nivel_ingles'] ?>">
                                 <?php
-                                if ($row_competencia_usuario['nivel_ingles'] == 0) {
+                                if ($row_competencia_usuario['nivel_ingles'] == 1) {
                                     echo 'Básico';
-                                } elseif ($row_competencia_usuario['nivel_ingles'] == 1) {
-                                    echo 'Intermediário';
                                 } elseif ($row_competencia_usuario['nivel_ingles'] == 2) {
-                                    echo 'Avançado';
+                                    echo 'Intermediário';
                                 } elseif ($row_competencia_usuario['nivel_ingles'] == 3) {
+                                    echo 'Avançado';
+                                } elseif ($row_competencia_usuario['nivel_ingles'] == 4) {
                                     echo 'Fluente';
                                 }
                                 ?>

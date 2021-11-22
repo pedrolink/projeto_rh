@@ -38,13 +38,13 @@ $row_popup_competencias_usuario = mysqli_fetch_array($result_popup_competencias_
                         <div class="form-group col-md-6">
                             <label>Nível Inglês</label>
                             <input type="text" class="form-control" value="<?php
-                                                                            if ($row_melhor_usuario_competencias['nivel_ingles'] == 0) {
+                                                                            if ($row_melhor_usuario_competencias['nivel_ingles'] == 1) {
                                                                                 echo 'Básico';
-                                                                            } elseif ($row_melhor_usuario_competencias['nivel_ingles'] == 1) {
-                                                                                echo 'Intermediário';
                                                                             } elseif ($row_melhor_usuario_competencias['nivel_ingles'] == 2) {
-                                                                                echo 'Avançado';
+                                                                                echo 'Intermediário';
                                                                             } elseif ($row_melhor_usuario_competencias['nivel_ingles'] == 3) {
+                                                                                echo 'Avançado';
+                                                                            } elseif ($row_melhor_usuario_competencias['nivel_ingles'] == 4) {
                                                                                 echo 'Fluente';
                                                                             }
                                                                             ?>" disabled>

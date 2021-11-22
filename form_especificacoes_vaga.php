@@ -162,15 +162,15 @@ if ($result_melhor_candidato->num_rows > 0) { ?>
                                 <li class="list-group-item"><?php echo $row_melhor_candidato_usuario['email'] ?></li>
                                 <li class="list-group-item">
                                     <?php
-                                    if ($row_melhor_usuario_competencias['nivel'] == 0) {
+                                    if ($row_melhor_usuario_competencias['nivel'] == 1) {
                                         echo 'Estagiário';
-                                    } elseif ($row_melhor_usuario_competencias['nivel'] == 1) {
-                                        echo 'Júnior';
                                     } elseif ($row_melhor_usuario_competencias['nivel'] == 2) {
-                                        echo 'Pleno';
+                                        echo 'Júnior';
                                     } elseif ($row_melhor_usuario_competencias['nivel'] == 3) {
-                                        echo 'Sênior';
+                                        echo 'Pleno';
                                     } elseif ($row_melhor_usuario_competencias['nivel'] == 4) {
+                                        echo 'Sênior';
+                                    } elseif ($row_melhor_usuario_competencias['nivel'] == 5) {
                                         echo 'Gerente';
                                     }
                                     ?>

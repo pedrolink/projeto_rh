@@ -19,15 +19,15 @@ if ($result_minhas_cadidaturas->num_rows > 0) {
                     <p class="card-text">
                         <?php
                         echo 'Nível: ';
-                        if ($row_vaga_candidatura['nivel'] == 0) {
+                        if ($row_vaga_candidatura['nivel'] == 1) {
                             echo 'Estagiário';
-                        } elseif ($row_vaga_candidatura['nivel'] == 1) {
-                            echo 'Júnior';
                         } elseif ($row_vaga_candidatura['nivel'] == 2) {
-                            echo 'Pleno';
+                            echo 'Júnior';
                         } elseif ($row_vaga_candidatura['nivel'] == 3) {
-                            echo 'Sênior';
+                            echo 'Pleno';
                         } elseif ($row_vaga_candidatura['nivel'] == 4) {
+                            echo 'Sênior';
+                        } elseif ($row_vaga_candidatura['nivel'] == 5) {
                             echo 'Gerente';
                         }
                         ?>
@@ -36,13 +36,13 @@ if ($result_minhas_cadidaturas->num_rows > 0) {
                     <p class="card-text">
                         <?php
                         echo 'Nível inglês: ';
-                        if ($row_vaga_candidatura['nivel_ingles'] == 0) {
+                        if ($row_vaga_candidatura['nivel_ingles'] == 1) {
                             echo 'Básico';
-                        } elseif ($row_vaga_candidatura['nivel_ingles'] == 1) {
-                            echo 'Intermediário';
                         } elseif ($row_vaga_candidatura['nivel_ingles'] == 2) {
-                            echo 'Avançado';
+                            echo 'Intermediário';
                         } elseif ($row_vaga_candidatura['nivel_ingles'] == 3) {
+                            echo 'Avançado';
+                        } elseif ($row_vaga_candidatura['nivel_ingles'] == 4) {
                             echo 'Fluente';
                         }
                         ?>
