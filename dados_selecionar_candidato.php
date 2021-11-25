@@ -13,7 +13,10 @@ if ($selecionar_candidato) {
     $sql_usuario_selecionado = 'SELECT * FROM gestao_candidatos_selecionados WHERE id_usuario = "' . $id_usuario . '"';
     $result_usuario_selecionado = $conexao->query($sql_usuario_selecionado);
 
-    if ($result_usuario_selecionado->num_rows > 0) {
+    $sql_usuario_banco_talentos = 'SELECT * FROM gestao_banco_talentos WHERE id_usuario = "' . $id_usuario . '"';
+    $result_usuario_banco_talentos = $conexao->query($sql_usuario_banco_talentos);
+
+    if ($result_usuario_selecionado->num_rows > 0 or $result_usuario_banco_talentos->num_rows > 0) {
         $_SESSION['selecionado_exist'] = true;
     } else {
         $insert_seleciona_candidato = "INSERT INTO gestao_candidatos_selecionados (id_usuario, id_vaga, descricao) VALUES ('$id_usuario', '$id_vaga', '$descricao')";
@@ -28,7 +31,10 @@ if ($selecionar_candidato) {
     $sql_usuario_selecionado = 'SELECT * FROM gestao_candidatos_selecionados WHERE id_usuario = "' . $id_usuario . '"';
     $result_usuario_selecionado = $conexao->query($sql_usuario_selecionado);
 
-    if ($result_usuario_selecionado->num_rows > 0) {
+    $sql_usuario_banco_talentos = 'SELECT * FROM gestao_banco_talentos WHERE id_usuario = "' . $id_usuario . '"';
+    $result_usuario_banco_talentos = $conexao->query($sql_usuario_banco_talentos);
+
+    if ($result_usuario_selecionado->num_rows > 0 or $result_usuario_banco_talentos->num_rows > 0) {
         $_SESSION['selecionado_exist'] = true;
     } else {
         $sql_usuario_selecionado = 'SELECT * FROM gestao_banco_talentos WHERE id_usuario = "' . $id_usuario . '"';

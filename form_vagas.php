@@ -25,7 +25,7 @@ if (mysqli_num_rows($result_competencia_usuario) > 0) :
                     ?>
                         <?php include './popup_editar_vaga.php' ?>
                         <div class="col-md-4" style="margin-top: 15px">
-                            <div class="card">
+                            <div class="card" style="width: 100%; height: 100%;">
                                 <?php if ($row_vagas['imagem']) :  ?>
                                     <img src="images/vagas_images/<?php echo $row_vagas['imagem'] ?>" class="card-img-top" alt="Imagem perfil 1" width="288px" height="288px">
                                 <?php else : ?>

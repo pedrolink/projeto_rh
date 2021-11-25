@@ -55,10 +55,10 @@ $row_popup_requisitos_vaga = mysqli_fetch_array($result_popup_requisitos_vaga);
                                     }
                                     ?>
                                 </option>
-                                <option value="Básico">Básico</option>
-                                <option value="Intermediário">Intermediário</option>
-                                <option value="Avançado">Avançado</option>
-                                <option value="Fluente">Fluente</option>
+                                <option value="1">Básico</option>
+                                <option value="2">Intermediário</option>
+                                <option value="3">Avançado</option>
+                                <option value="4">Fluente</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -79,11 +79,11 @@ $row_popup_requisitos_vaga = mysqli_fetch_array($result_popup_requisitos_vaga);
                                     }
                                     ?>
                                 </option>
-                                <option value="Estagiário">Estágio</option>
-                                <option value="Júnior">Júnior</option>
-                                <option value="Pleno">Pleno</option>
-                                <option value="Sênior">Sênior</option>
-                                <option value="Gerente">Gerente</option>
+                                <option value="1">Estágio</option>
+                                <option value="2">Júnior</option>
+                                <option value="3">Pleno</option>
+                                <option value="4">Sênior</option>
+                                <option value="5">Gerente</option>
                             </select>
                         </div>
                     </div>

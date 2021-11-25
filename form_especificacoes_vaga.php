@@ -140,19 +140,23 @@ if ($result_melhor_candidato->num_rows > 0) { ?>
         <div class="container">
             <div class="row">
                 <?php while ($row_melhor_candidato = $result_melhor_candidato->fetch_assoc()) {
-                    $sql_melhor_candidato_usuario = 'SELECT * FROM usuarios WHERE id = "' . $row_melhor_candidato['id'] . '"';
+                    $sql_melhor_candidato_usuario = 'SELECT * FROM usuarios WHERE id = "' . $row_melhor_candidato['id_usuario'] . '"';
                     $result_melhor_candidato_usuario = mysqli_query($conexao, $sql_melhor_candidato_usuario);
                     $row_melhor_candidato_usuario = mysqli_fetch_array($result_melhor_candidato_usuario);
 
-                    $sql_melhor_usuario_competencias = 'SELECT * FROM competencias_usuario WHERE id_usuario = "' . $row_melhor_candidato['id'] . '"';
+                    $sql_melhor_usuario_competencias = 'SELECT * FROM competencias_usuario WHERE id_usuario = "' . $row_melhor_candidato['id_usuario'] . '"';
                     $result_melhor_usuario_competencias = mysqli_query($conexao, $sql_melhor_usuario_competencias);
                     $row_melhor_usuario_competencias = mysqli_fetch_array($result_melhor_usuario_competencias);
 
                     include './popup_informacoes_usuario.php';
                 ?>
                     <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="images/foto_perfil.PNG">
+                        <div class="card" style="width: 100%; height: 100%;">
+                            <?php if ($row_melhor_usuario_competencias['imagem_usuario']) : ?>
+                                <img class="card-img-top" src="images/profile_images/<?php echo $row_melhor_usuario_competencias['imagem_usuario'] ?>">
+                            <?php else : ?>
+                                <img class="card-img-top" src="images/user-icon.png">
+                            <?php endif ?>
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row_melhor_candidato_usuario['nome'] ?></h5>
                                 <p class="card-text">Cargo: <?php echo $row_vaga['cargo'] ?></p>

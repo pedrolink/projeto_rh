@@ -120,7 +120,8 @@ if (isset($_GET['nivel_ingles'])) {
             </div>
             <div class="col-2">
                 <label>Ativa</label>
-                <select name="ativa" class="form-control">
+                <select name="ativa" class="form-control" required>
+                    <option value="">Selecione</option>
                     <option value="Sim">Sim</option>
                     <option value="Não">Não</option>
                 </select>
@@ -220,15 +221,15 @@ if (isset($_GET['nivel_ingles'])) {
                     <td><?php echo $row_pesquisa_vagas['cargo'] ?></td>
                     <td>
                         <?php
-                        if ($row_pesquisa_vagas['nivel'] == 0) {
+                        if ($row_pesquisa_vagas['nivel'] == 1) {
                             echo 'Estágio';
-                        } elseif ($row_pesquisa_vagas['nivel'] == 1) {
-                            echo 'Júnior';
                         } elseif ($row_pesquisa_vagas['nivel'] == 2) {
-                            echo 'Pleno';
+                            echo 'Júnior';
                         } elseif ($row_pesquisa_vagas['nivel'] == 3) {
-                            echo 'Sênior';
+                            echo 'Pleno';
                         } elseif ($row_pesquisa_vagas['nivel'] == 4) {
+                            echo 'Sênior';
+                        } elseif ($row_pesquisa_vagas['nivel'] == 5) {
                             echo 'Gerente';
                         }
                         ?>

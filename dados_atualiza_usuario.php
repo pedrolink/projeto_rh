@@ -6,6 +6,7 @@ $tipo_permissao = $_POST['tipo_permissao'];
 $usuario = $_POST['usuario'];
 
 $sql_update_user = 'UPDATE usuarios SET tipo_permissao = "' . $tipo_permissao . '" WHERE usuario = "' . $usuario . '"';
+echo $sql_update_user;
 
 if($conexao->query($sql_update_user) === TRUE){
     $_SESSION['status_user_alterado'] = true;

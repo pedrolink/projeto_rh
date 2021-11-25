@@ -24,28 +24,28 @@
     unset($_SESSION['status_user_error']);
     ?>
 
-    <form action="dados_atualiza_usuario.php" method="POST">
-        <?php
-        $sql_usuarios = 'SELECT * FROM usuarios';
-        $result_usuarios = $conexao->query($sql_usuarios);
+    <?php
+    $sql_usuarios = 'SELECT * FROM usuarios';
+    $result_usuarios = $conexao->query($sql_usuarios);
 
-        if ($result_usuarios->num_rows > 0) { ?>
+    if ($result_usuarios->num_rows > 0) { ?>
 
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Usuário</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Data Cadastro</th>
-                        <th scope="col">Tipo Permissão</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($row_usuarios = $result_usuarios->fetch_assoc()) {
-                    ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Usuário</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Data Cadastro</th>
+                    <th scope="col">Tipo Permissão</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row_usuarios = $result_usuarios->fetch_assoc()) {
+                ?>
+                    <form action="dados_atualiza_usuario.php" method="POST">
                         <input type="hidden" name="usuario" value="<?php echo $row_usuarios['usuario'] ?>" />
                         <tr>
                             <th scope="row"><?php echo $row_usuarios['nome'] ?></th>
@@ -61,31 +61,31 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="submit" class="btn btn-success" value="Salvar" name="btn_salvar" />
+                                <button type="submit" class="btn btn-success">Salvar</button>
                             </td>
                         </tr>
-                </tbody>
-            <?php
-                    }
-            ?>
-            </table>
+                    </form>
 
-        <?php
-        } else { ?>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <h5>Nenhum registro encontrado!</h5>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        <?php } ?>
-    </form>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    <?php
+    } else { ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h5>Nenhum registro encontrado!</h5>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <?php } ?>
 </div>
