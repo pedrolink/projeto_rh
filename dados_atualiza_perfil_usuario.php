@@ -6,6 +6,7 @@ include './conexao.php';
 
 $email = trim($_POST['email']);
 
+$cep = trim($_POST['cep']);
 $endereco_principal = trim($_POST['endereco_principal']);
 $endereco_secundario = trim($_POST['endereco_secundario']);
 $cidade = trim($_POST['cidade']);
@@ -54,7 +55,7 @@ if ($result_informacoes_competencia->num_rows > 0) {
         '", nivel = "' . $nivel . '", cidade = "' . $cidade . '", endereco_principal = "' . $endereco_principal .
         '", endereco_secundario = "' . $endereco_secundario . '", estado = "' . $estado . '", telefone_primario = "' . $telefone_primario .
         '", telefone_secundario = "' . $telefone_secundario . '", data_nascimento = "' . $data_nascimento . '", nivel_ingles = "' . $nivel_ingles .
-        '", url_linkedin = "' . $url_linkedin . '", imagem_usuario = "' . $novo_nome_imagem . '" WHERE id_usuario = "' . $id_usuario . '"';
+        '", url_linkedin = "' . $url_linkedin . '", imagem_usuario = "' . $novo_nome_imagem . '", cep = "' . $cep . '" WHERE id_usuario = "' . $id_usuario . '"';
 
     if ($conexao->query($sql_update_user) === TRUE and $conexao->query($sql_update_competencias) === TRUE) {
         move_uploaded_file($file_temp, $location . $novo_nome_imagem);
@@ -63,8 +64,8 @@ if ($result_informacoes_competencia->num_rows > 0) {
         $_SESSION['competencia_usuario_error'] = true;
     }
 } else {
-    $sql_insert_competencias = "INSERT INTO competencias_usuario (id_usuario, habilidades, pretencao_salarial, nivel, cidade, endereco_principal, endereco_secundario, estado, telefone_primario, telefone_secundario, data_nascimento, nivel_ingles, url_linkedin, imagem_usuario) 
-    VALUES ('$id_usuario', '$habilidades', '$pretencao_salarial', '$nivel', '$cidade', '$endereco_principal','$endereco_secundario','$estado','$telefone_primario','$telefone_secundario','$data_nascimento','$nivel_ingles','$url_linkedin', '$novo_nome_imagem')";
+    $sql_insert_competencias = "INSERT INTO competencias_usuario (id_usuario, habilidades, pretencao_salarial, nivel, cidade, endereco_principal, endereco_secundario, estado, telefone_primario, telefone_secundario, data_nascimento, nivel_ingles, url_linkedin, imagem_usuario, cep) 
+    VALUES ('$id_usuario', '$habilidades', '$pretencao_salarial', '$nivel', '$cidade', '$endereco_principal','$endereco_secundario','$estado','$telefone_primario','$telefone_secundario','$data_nascimento','$nivel_ingles','$url_linkedin', '$novo_nome_imagem', '$cep')";
 
     if($conexao->query($sql_insert_competencias) === TRUE and $conexao->query($sql_update_user) === TRUE){
         move_uploaded_file($file_temp, $location . $novo_nome_imagem);

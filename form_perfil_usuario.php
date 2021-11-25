@@ -1,5 +1,5 @@
 <form action="dados_atualiza_perfil_usuario.php" method="POST" enctype="multipart/form-data">
-    <div style="width: 1200px; height: 880px; margin-left: 170px">
+    <div style="width: 1200px; height: 1000px; margin-left: 170px">
 
         <!-- PERFIL ALTERADO OU CADASTRADO COM SUCESSO -->
         <?php
@@ -53,6 +53,12 @@
                 </div>
                 <div class="vertical-line" style="border: 1px inset;  background-color: #75787a; margin-top: 10px"></div>
                 <div class="form-row" style="margin-top: 10px">
+                    <div class="form-group col-md-2">
+                        <label>CEP</label>
+                        <input type="text" class="form-control" name="cep" value="<?php echo $row_competencia_usuario['cep'] ?>" placeholder="Digite seu CEP" required>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 10px">
                     <div class="form-group col-md-4">
                         <label>Endereço</label>
                         <input type="text" class="form-control" name="endereco_principal" value="<?php echo $row_competencia_usuario['endereco_principal'] ?>" placeholder="Digite seu endereço principal">
@@ -69,8 +75,8 @@
                         <label>Estado</label>
                         <select name="estado" class="form-control">
                             <option value="<?php echo $row_competencia_usuario['estado'] ?>"> <?php echo $row_competencia_usuario['estado'] ?> </option>
-                            <?php 
-                                include './utilizaveis/estados.php';
+                            <?php
+                            include './utilizaveis/estados.php';
                             ?>
                         </select>
                     </div>
@@ -153,7 +159,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputCEP">LinkedIn url</label>
+                        <label>LinkedIn url</label>
                         <input type="text" class="form-control" name="url_linkedin" value="<?php echo $row_competencia_usuario['url_linkedin'] ?>" placeholder="Informe sua URL do LinkedIn">
                     </div>
                 </div>

@@ -28,20 +28,20 @@
 
             <form class="row g-3" action="dados_cadastro_vagas.php" method="POST" enctype="multipart/form-data">
                 <div class="col-md-3">
-                    <label class="form-label">Nome da vaga</label>
-                    <input name="nome_vaga" class="form-control" id="nome_vaga" required>
+                    <label class="form-label">Nome</label>
+                    <input name="nome_vaga" class="form-control" placeholder="Digite o nome da vaga" id="nome_vaga" required>
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Cargo</label>
-                    <input name="cargo" class="form-control" id="cargo" required>
+                    <input name="cargo" class="form-control" placeholder="Digite o cargo da vaga" id="cargo" required>
                 </div>
                 <div class="col-md-1">
                     <label class="form-label">Salário</label>
-                    <input name="salario" class="form-control" id="salario" required>
+                    <input name="salario" class="form-control" placeholder="Digite o salário" id="salario" required>
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Localidade</label>
-                    <input name="localidade" class="form-control" id="localidade" required>
+                    <input name="localidade" class="form-control" placeholder="Digite a localidade da vaga" id="localidade" required>
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">Nível Inglês</label>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-12" style="margin-top: 10px;">
                     <label class="form-label">Descrição</label>
-                    <textarea class="form-control" name="descricao_vaga" id="descricao_vaga" cols="10" rows="5" required></textarea>
+                    <textarea class="form-control" name="descricao_vaga" placeholder="Digite uma descrição para a vaga" id="descricao_vaga" cols="10" rows="5" required></textarea>
                 </div>
                 <div class="col-12" style="margin-top: 10px;">
                     <label class="form-label">Requisitos</label>
